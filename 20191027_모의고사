@@ -1,0 +1,22 @@
+# programmers
+programmers algorism study
+def solution(answers):
+	a = [1,2,3,4,5] 
+	b = [2,1,2,3,2,4,2,5]
+	c = [3,3,1,1,2,2,4,4,5,5]
+	a_count = 0
+	b_count = 0
+	c_count = 0
+	answer =[]
+	for i in range(0,len(answers)):
+			if a[i%5] == answers[i]:
+				a_count += 1
+			if b[i%8] == answers[i]:
+				b_count += 1
+			if c[i%10] == answers[i]:
+				c_count += 1
+	total_count=[a_count,b_count,c_count]
+	for j in range(0,3):
+		if total_count[j] == max(total_count):
+			answer += [j+1]
+	return answer

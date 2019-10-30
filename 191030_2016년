@@ -1,0 +1,17 @@
+# programmers
+programmers algorism study
+def solution(a,b):
+    answer =''
+    today = ['FRI','SAT','SUN','MON','TUE','WED','THU']
+    days = 0
+    for i in range(12):
+        if (i+1)<a:
+            if (((i+1)<8)&((i+1)%2 == 1))|(((i+1) >= 8)&((i+1)%2 == 0)):
+                days += 31
+            elif (((i+1)<8)&((i+1)%2 == 0)&((i+1)!=2))|(((i+1) >= 8)&((i+1)%2 == 1)):
+                days += 30
+            elif (i+1) == 2:
+                days += 29
+        elif (i+1) == a:
+            days += b
+    return today[(days%7)-1]
